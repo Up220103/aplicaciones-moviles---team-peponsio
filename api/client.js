@@ -1,17 +1,11 @@
 import axios from 'axios';
 
-// =====================================================================
-// CLIENTES HTTP (axios)
-// ---------------------------------------------------------------------
-// Aqui se crean las "conexiones" a cada API. Cada cliente ya trae la
-// URL base, asi en los services solo escribimos la ruta final.
-// Ejemplo: pokeApiClient.get('/pokemon/25')
-//          -> GET https://pokeapi.co/api/v2/pokemon/25
-// =====================================================================
 
-// Cliente para NUESTRO backend local (lo usan LicenciaService y TareaService)
+const IP_BACKEND = '10.249.5.243';
+
+// Cliente para NUESTRO backend .NET (lo usan LicenciaService, TareaService y PokemonDbService)
 const apiClient = axios.create({
-    baseURL: 'http://localhost:5058',
+    baseURL: `http://${IP_BACKEND}:5058`,
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json',

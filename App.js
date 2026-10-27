@@ -15,6 +15,8 @@ import PokemonScreen from './screens/PokemonScreen';
 import RecetarioScreen from './screens/RecetarioScreen';
 import PokemonDetalleScreen from './screens/PokemonDetalleScreen';
 import RecetaDetalleScreen from './screens/RecetaDetalleScreen';
+// CRUD contra nuestro backend .NET + MySQL (services/PokemonDbService.js)
+import PokemonCrudScreen from './screens/PokemonCrudScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -64,6 +66,7 @@ export default function App() {
             else if (route.name === 'Tareas') iconName = 'list';
             else if (route.name === 'Pokemones') iconName = 'paw';        // icono pestana Pokemones
             else if (route.name === 'Recetario') iconName = 'restaurant'; // icono pestana Recetario
+            else if (route.name === 'Mi Pokedex') iconName = 'server'; // icono pestana CRUD
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: 'tomato',
@@ -77,6 +80,7 @@ export default function App() {
         {/* Pestanas nuevas, a un lado de Licencia */}
         <Tab.Screen name="Pokemones" component={PokemonStack} options={{ headerShown: false }} />
         <Tab.Screen name="Recetario" component={RecetarioStack} options={{ headerShown: false }} />
+        <Tab.Screen name="Mi Pokedex" component={PokemonCrudScreen} />
         <Tab.Screen name="Perfil" component={PerfilScreen} />
       </Tab.Navigator>
     </NavigationContainer>

@@ -1,4 +1,4 @@
-// =====================================================================
+﻿// =====================================================================
 // PokemonService.js  (SERVICES / back)
 // ---------------------------------------------------------------------
 // Funciones que hablan con la API de Pokemon. No hay nada visual aqui.
@@ -12,12 +12,12 @@ import { POKEMON_ENDPOINTS } from '../api/endpoints';
 
 // ---------------------------------------------------------------------
 // getPokemones()  -> GET (todos)
-// Endpoint: GET https://pokeapi.co/api/v2/pokemon?limit=30
+// Endpoint: GET https://pokeapi.co/api/v2/pokemon?limit=151
 // Se manda llamar en: PokemonScreen.js -> funcion cargarPokemones()
 // Regresa: [{ id, nombre, imagen }, ...]
 // ---------------------------------------------------------------------
 export async function getPokemones() {
-    const response = await pokeApiClient.get(POKEMON_ENDPOINTS.lista(30));
+    const response = await pokeApiClient.get(POKEMON_ENDPOINTS.lista(151));
 
     // La API regresa { results: [{ name, url }, ...] }
     // La url termina en el numero: ".../pokemon/25/" -> sacamos el 25
